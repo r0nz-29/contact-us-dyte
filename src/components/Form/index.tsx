@@ -7,12 +7,14 @@ import {
   FormControl,
   FormLabel,
   Input,
-  Select, SimpleGrid, Text,
+  Select,
+  SimpleGrid,
+  Text,
   Textarea,
   VStack,
 } from "@chakra-ui/react";
 
-import React, {useState} from "react";
+import React, { useState } from "react";
 import StartCallModal from "../StartCallModal";
 import ThanksModal from "../ThanksModal";
 
@@ -34,8 +36,12 @@ const ContactForm = () => {
   const [showModal, setShowModal] = useState(false);
   const [showThanks, setShowThanks] = useState(false);
 
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    const {name, value} = event.target;
+  const handleInputChange = (
+    event: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
+  ) => {
+    const { name, value } = event.target;
     form.set(name, value);
     setForm(form);
   };
@@ -64,12 +70,15 @@ const ContactForm = () => {
     <Box>
       <Container pt={16}>
         <SimpleGrid columns={1} height="100%" alignItems="center">
-          <Card border="1px solid rgba(0, 0, 0, 0.1)" borderTop="8px solid #4299E1">
+          <Card
+            border="1px solid rgba(0, 0, 0, 0.1)"
+            borderTop="8px solid #4299E1"
+          >
             <CardBody>
               <Text textAlign="center" fontWeight="bolder" fontSize="4xl">
                 Contact us
               </Text>
-              <br/>
+              <br />
               <form onSubmit={handleSubmit}>
                 {/*<VStack spacing={4}>*/}
                 <SimpleGrid columns={[1, 1, 2, 2, 2]} spacing={6}>
@@ -166,14 +175,8 @@ const ContactForm = () => {
           </Card>
         </SimpleGrid>
       </Container>
-      <StartCallModal
-        open={showModal}
-        onClose={() => setShowModal(false)}
-      />
-      <ThanksModal
-        open={showThanks}
-        onClose={() => setShowThanks(false)}
-      />
+      <StartCallModal open={showModal} onClose={() => setShowModal(false)} />
+      <ThanksModal open={showThanks} onClose={() => setShowThanks(false)} />
     </Box>
   );
 };

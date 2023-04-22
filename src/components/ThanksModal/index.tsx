@@ -15,7 +15,7 @@ export default function ThanksModal({open=false, onClose=() => {}}) {
         <ModalCloseButton/>
         <ModalBody>
           <Text pb={4}>
-            We have received your request and will contact you soon
+            Thanks for reaching out, our experts will get back to you shortly.
           </Text>
         </ModalBody>
       </ModalContent>
